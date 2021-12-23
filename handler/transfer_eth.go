@@ -1,4 +1,4 @@
-package transfer
+package handler
 
 import (
 	"context"
@@ -7,19 +7,19 @@ import (
 	"log"
 	"math/big"
 
+	"github.com/montera82/golang-ethereum/adapter"
+
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/ethclient"
-	
 )
 
 type Transferer struct {
-	client *ethclient.Client
+	client adapter.EthClient
 	privateKey string
 }
 
-func NewTransferer(client *ethclient.Client, privateKey string) *Transferer {
+func NewTransferer(client adapter.EthClient, privateKey string) *Transferer {
 	return &Transferer{client, privateKey}
 }
 
