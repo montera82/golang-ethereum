@@ -1,6 +1,11 @@
 # Golang-Ethereum
 Simple project that calls the ethereum blockchain from golang.
 
+## Setup
+
+`cp .env.dist .env`
+then fill out the missing environment variable(s)
+
 ## Runinng the code
 
 ```
