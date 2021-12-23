@@ -11,13 +11,13 @@ import (
 	// "github.com/ethereum/go-ethereum/common"
 	"github.com/ilyakaznacheev/cleanenv"
 	"github.com/ethereum/go-ethereum/ethclient"
-	"github.com/montera82/golang-ethereum/transfer"
+	"github.com/montera82/golang-ethereum/handler"
 )
 
 func main() {
 	var c Config
 
-	if err := cleanenv.ReadConfig(".env", &c); err!= nil {
+	if err := cleanenv.ReadConfig("../../.env", &c); err!= nil {
 		log.Fatal("unable to load config")
 	}
 
@@ -28,7 +28,7 @@ func main() {
 
 	fmt.Println("We have a connection!")
 
-	t := transfer.NewTransferer(
+	t := handler.NewTransferer(
 		client,
 		c.TransfererPrivateKey,
 	)
