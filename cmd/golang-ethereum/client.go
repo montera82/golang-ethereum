@@ -12,10 +12,11 @@ import (
 	"github.com/ilyakaznacheev/cleanenv"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/montera82/golang-ethereum/handler"
+	"github.com/montera82/golang-ethereum/cmd"
 )
 
 func main() {
-	var c Config
+	var c cmd.Config
 
 	if err := cleanenv.ReadConfig("../../.env", &c); err!= nil {
 		log.Fatal("unable to load config")

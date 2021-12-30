@@ -1,4 +1,4 @@
-package main
+package cmd
 
 type Config struct {
 	TransfererPrivateKey string `env:"TRANSFERER_PRIVATE_KEY" required:"true"`
